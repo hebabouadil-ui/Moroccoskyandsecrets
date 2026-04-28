@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO meta tags -->
+  <title data-i18n="meta.title">Morocco Skies &amp; Secrets — Hot Air Balloon Flights, City Circuits &amp; Tours</title>
+  <meta name="description" data-i18n="meta.description"
+    content="Morocco Skies & Secrets — sunrise hot air balloon flights over the Atlas, curated city circuits and cultural tours from Marrakech." />
+  <meta name="keywords"
+    content="Morocco hot air balloon, Marrakech balloon flight, Atlas sunrise flight, Marrakech city tour, Morocco circuits, Morocco travel agency" />
+  <meta name="author" content="Morocco Skies & Secrets" />
+  <meta property="og:title" content="Morocco Skies & Secrets — Rise above the Atlas" />
+  <meta property="og:description" content="Sunrise balloon flights, city circuits and cultural tours from Marrakech." />
+  <meta property="og:type" content="website" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap"
+    rel="stylesheet" />
+
+  <style>
+/* ============================================================================
+   MOROCCO SKIES & SECRETS — landing page
+   Reference-faithful design: dark navy nav, gold accent, cinematic balloon
+   hero with centered CTA, three image-on-top cards with navy caption blocks,
+   terracotta footer band with star ornament.
+   ============================================================================ */
+
+/* ---------- TOKENS ---------- */
+:root{
+  /* Brand palette — from the reference image */
+  --navy-900: #0c1a2e;        /* darkest, nav bg */
+  --navy-800: #102341;        /* card caption */
+  --navy-700: #163056;
+  --gold:     #d8b260;        /* logo + CTA */
+  --gold-soft:#e7c987;
+  --gold-deep:#b48a3e;
+  --terracotta: #c8694a;      /* footer band */
+  --terracotta-deep: #a4543b;
+  --cream:    #fbf6ee;
+  --sand-50:  #faf6ef;
+  --sand-100: #f3ece0;
+  --sand-200: #e9dcc6;
+  --line:     rgba(12,26,46,.12);
+  --line-strong: rgba(12,26,46,.22);
+  --ink:      #14202f;
+  --ink-soft: #4a5568;
+
+  /* Type */
+  --serif:  "Cormorant Garamond", "Times New Roman", serif;
+  --sans:   "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --arabic: "Amiri", serif;
+
+  /* Layout */
+  --max:    1280px;
+  --radius-s: 8px;
+  --radius:   14px;
+  --radius-l: 20px;
+  --shadow-soft: 0 14px 40px -18px rgba(12,26,46,.35);
+  --shadow-lift: 0 24px 60px -22px rgba(12,26,46,.45);
+  --ease: cubic-bezier(.2,.7,.2,1);
+}
+
+/* ---------- RESET ---------- */
+*,*::before,*::after{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+body{
+  margin:0;
+  font-family: var(--sans);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: var(--ink);
+  background: var(--sand-50);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+img{ max-width:100%; display:block; }
+a{ color: inherit; text-decoration:none; }
+button{ font: inherit; cursor: pointer; border:0; background:transparent; color:inherit; }
+ul{ margin:0; padding:0; list-style:none; }
+
+html[dir="rtl"] body{ font-family: var(--arabic), var(--sans); }
+
+/* ---------- LAYOUT ---------- */
+.container{
+  width:100%;
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+.section{ padding: clamp(70px, 9vw, 130px) 0; position: relative; }
+.section--alt{
+  background:
+    radial-gradient(1100px 600px at 90% -10%, rgba(216,178,96,.10), transparent 60%),
+    var(--sand-100);
+}
+.section--dark{
+  background: var(--navy-900);
+  color: var(--cream);
+  overflow: hidden;
+  isolation: isolate;
+}
+.section__bg{
+  position: absolute; inset:0;
+  background:
+    radial-gradient(700px 400px at 20% 30%, rgba(216,178,96,.18), transparent 60%),
+    radial-gradient(700px 400px at 80% 80%, rgba(22,48,86,.6), transparent 60%);
+  z-index:-1;
+}
+
+/* ---------- TYPOGRAPHY ---------- */
+.section__head{ max-width: 760px; margin: 0 0 56px; }
+.section__head--center{ margin-inline:auto; text-align:center; }
+.section__head--row{
+  max-width: none;
+  display:flex; align-items:flex-end; justify-content:space-between; gap:32px;
+  flex-wrap: wrap; margin-bottom: 56px;
+}
+.section__kicker{
+  display:inline-block;
+  font-family: var(--sans);
+  font-size: 12px; letter-spacing: .22em; text-transform: uppercase;
+  color: var(--gold-deep);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.section__kicker.light{ color: var(--gold-soft); }
+.section__title{
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(2.1rem, 4.6vw, 3.6rem);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  margin: 0;
+  color: var(--navy-900);
+}
+.section__title em{
+  font-style: italic;
+  font-weight: 400;
+  color: var(--gold-deep);
+}
+.section__title.light{ color: var(--cream); }
+.section__title.light em{ color: var(--gold-soft); }
+.section__lead{
+  margin: 18px 0 0;
+  color: var(--ink-soft);
+  font-size: 1.02rem;
+  max-width: 60ch;
+}
+.section__lead.light{ color: rgba(251,246,238,.78); }
+.section__head--center .section__lead{ margin-inline:auto; }
+
+
+/* ============================================================================
+   HERO — cinematic balloon over Atlas, single dark block
+   ============================================================================ */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  background: var(--navy-900);
+  color: var(--cream);
+  display:flex; flex-direction:column;
+  isolation: isolate;
+  /* Inset the hero slightly with rounded bottom corners — like reference */
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  overflow: hidden;
+}
+
+.hero__bg{ position:absolute; inset:0; z-index:0; }
+.hero__slide{
+  position:absolute; inset:0;
+  background-size: cover; background-position: center;
+  opacity:0;
+  transition: opacity 1.6s var(--ease);
+}
+.hero__slide.is-active{ opacity:1; }
+.hero__overlay{
+  position:absolute; inset:0;
+  /* Subtle dark vignette that strengthens at top (for nav legibility) and bottom (for cards) */
+  background:
+    linear-gradient(180deg, rgba(12,26,46,.55) 0%, rgba(12,26,46,.0) 18%, rgba(12,26,46,0) 60%, rgba(12,26,46,.55) 100%),
+    linear-gradient(0deg, rgba(12,26,46,.15), rgba(12,26,46,.15));
+}
+
+/* ---------- NAV (dark navy strip across the top) ---------- */
+.nav{
+  position: relative; z-index: 5;
+  background: rgba(12,26,46,.78);
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+  border-bottom: 1px solid rgba(216,178,96,.15);
+}
+.nav__inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 14px 28px;
+  display:flex; align-items:center; gap: 24px;
+}
+
+/* Brand */
+.brand{ display:flex; align-items:center; gap: 10px; color: var(--cream); }
+.brand__mark{ display:inline-flex; line-height: 0; }
+.brand__text{ display:flex; flex-direction:column; line-height:1; }
+.brand__name{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: .04em;
+  color: var(--cream);
+}
+.brand__sub{
+  font-family: var(--sans);
+  font-size: 9.5px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+/* Primary nav links */
+.nav__links{
+  display:none;
+  flex: 1;
+  align-items:center; justify-content:center;
+  gap: 28px;
+}
+.nav__links a{
+  font-size: 12.5px;
+  font-weight: 600;
+  letter-spacing: .15em;
+  color: rgba(251,246,238,.78);
+  position: relative;
+  padding: 10px 2px;
+  transition: color .25s var(--ease);
+}
+.nav__links a:hover{ color: var(--cream); }
+.nav__links a.is-active{ color: var(--gold); }
+.nav__links a.is-active::after{
+  /* gold underline as in the reference */
+  content:""; position:absolute; left:0; right:0; bottom: 2px;
+  height: 2px; background: var(--gold);
+  border-radius: 1px;
+}
+
+/* Right-side actions */
+.nav__actions{ display:flex; align-items:center; gap: 18px; margin-left: auto; }
+
+.btn-book{
+  display:inline-flex; align-items:center; justify-content:center;
+  background: var(--cream); color: var(--navy-900);
+  padding: 11px 22px;
+  border-radius: 4px;
+  font-size: 12.5px; font-weight: 700; letter-spacing: .12em;
+  transition: transform .3s var(--ease), background .3s var(--ease), color .3s var(--ease);
+}
+.btn-book:hover{ transform: translateY(-2px); background: var(--gold); color: var(--navy-900); }
+
+.lang-switch{
+  display:flex; align-items:center; gap: 6px;
+  color: var(--cream);
+  font-size: 12.5px; font-weight: 600; letter-spacing: .08em;
+}
+.lang-globe{ display:inline-flex; opacity:.85; }
+.lang-btn{
+  color: rgba(251,246,238,.7);
+  font: inherit;
+  padding: 2px 4px;
+  transition: color .25s var(--ease);
+}
+.lang-btn:hover{ color: var(--cream); }
+.lang-btn.active{ color: var(--cream); }
+.lang-sep{ opacity:.5; }
+
+/* Mobile hamburger */
+.nav__toggle{
+  width: 40px; height: 40px;
+  display:flex; flex-direction:column; justify-content:center; gap: 5px;
+  padding: 0 10px; margin-left: 8px;
+}
+.nav__toggle span{
+  display:block; height: 1.6px; background: var(--cream); border-radius:2px;
+  transition: transform .3s var(--ease), opacity .3s var(--ease);
+}
+.nav__toggle.is-open span:nth-child(1){ transform: translateY(6.5px) rotate(45deg); }
+.nav__toggle.is-open span:nth-child(2){ opacity:0; }
+.nav__toggle.is-open span:nth-child(3){ transform: translateY(-6.5px) rotate(-45deg); }
+
+@media(min-width: 1080px){
+  .nav__links{ display:flex; }
+  .nav__toggle{ display:none; }
+}
+
+/* Mobile drawer */
+@media(max-width: 1079px){
+  .nav__links{
+    position: fixed; inset: 70px 0 0 0;
+    background: var(--navy-900);
+    flex-direction: column; align-items:flex-start;
+    padding: 40px 28px; gap: 22px;
+    transform: translateX(100%);
+    transition: transform .4s var(--ease);
+    display: flex;
+    z-index: 40;
+  }
+  .nav__links.is-open{ transform: translateX(0); }
+  .nav__links a{ font-size: 1rem; padding: 6px 0; }
+  .nav__actions{ display:flex; }
+}
+@media(max-width: 560px){
+  .brand__sub{ display:none; }
+  .nav__inner{ padding: 12px 20px; gap: 12px; }
+  .btn-book{ padding: 9px 16px; font-size: 11.5px; }
+  .lang-switch{ font-size: 11.5px; }
+}
+
+/* ---------- HERO CENTER CTA ---------- */
+.hero__center{
+  position: relative; z-index: 4;
+  flex: 1;
+  display:flex; align-items:center; justify-content:center;
+  padding: 80px 24px;
+  animation: fadeUp 1s var(--ease) both;
+}
+.btn-cta{
+  display:inline-flex; align-items:center; justify-content:center; gap: 10px;
+  background: var(--gold);
+  color: var(--navy-900);
+  padding: 16px 38px;
+  border-radius: 6px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: .04em;
+  box-shadow: 0 14px 40px -10px rgba(216,178,96,.5);
+  transition: transform .35s var(--ease), background .35s var(--ease), box-shadow .35s var(--ease);
+}
+.btn-cta:hover{
+  transform: translateY(-3px);
+  background: var(--gold-soft);
+  box-shadow: 0 22px 50px -12px rgba(216,178,96,.6);
+}
+.btn-cta--block{ width:100%; padding: 18px; }
+
+
+/* ============================================================================
+   FEATURE CARDS — three cards sitting at the bottom of the hero
+   ============================================================================ */
+.features{
+  position: relative; z-index: 3;
+  padding: 0 24px;
+}
+.features__inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  margin-bottom: 0;
+}
+.feature{
+  display:flex; flex-direction: column;
+  background: transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .4s var(--ease);
+}
+.feature:hover{ transform: translateY(-6px); }
+.feature__media{
+  height: 180px;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+}
+.feature__media img{
+  width:100%; height:100%; object-fit:cover;
+  transition: transform 1s var(--ease);
+}
+.feature:hover .feature__media img{ transform: scale(1.06); }
+
+.feature__caption{
+  background: var(--navy-800);
+  color: var(--cream);
+  padding: 18px 22px;
+  border-radius: 0 0 8px 8px;
+  display:block;
+  transition: background .3s var(--ease);
+}
+.feature__caption:hover{ background: var(--navy-700); }
+.feature__caption h3{
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 14.5px;
+  letter-spacing: .12em;
+  margin: 0 0 6px;
+  color: var(--cream);
+}
+.feature__caption p{
+  font-size: 13px;
+  margin: 0;
+  color: rgba(251,246,238,.75);
+  line-height: 1.5;
+}
+
+@media(min-width: 700px){
+  .features__inner{ grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .feature__media{ height: 165px; }
+}
+
+
+/* ============================================================================
+   TERRACOTTA FOOTER STRIP — at the bottom of the hero block
+   ============================================================================ */
+.hero-foot{
+  position: relative; z-index: 3;
+  background: var(--terracotta);
+  margin-top: 24px;
+  padding: 18px 0 18px;
+  color: rgba(255,255,255,.95);
+}
+.hero-foot__inner{
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 28px;
+  display:flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px;
+  font-size: 12.5px;
+  letter-spacing: .03em;
+}
+.hero-foot__copy{ flex: 1 1 auto; }
+.hero-foot__link{
+  font-weight: 600;
+  letter-spacing: .14em;
+  color: var(--cream);
+  transition: opacity .25s var(--ease);
+}
+.hero-foot__link:hover{ opacity:.75; }
+.socials{ display:flex; gap: 12px; align-items:center; color: var(--cream); }
+.socials a{
+  display:inline-flex; align-items:center; justify-content:center;
+  transition: transform .25s var(--ease), opacity .25s var(--ease);
+}
+.socials a:hover{ transform: translateY(-2px); opacity: .85; }
+.hero-foot__contact strong{
+  font-weight: 700; margin-left: 6px;
+  letter-spacing: .04em;
+}
+.hero-foot__star{
+  position:absolute;
+  right: 28px; bottom: 8px;
+  opacity:.85;
+  pointer-events: none;
+}
+
+@media(max-width: 760px){
+  .hero-foot__inner{ font-size: 12px; gap: 14px; }
+  .hero-foot__star{ display:none; }
+}
+
+
+/* ============================================================================
+   GENERAL CARDS (used by Balloon Flights & Circuits)
+   ============================================================================ */
+.grid{ display:grid; gap: 26px; }
+.grid--3{ grid-template-columns: repeat(1, 1fr); }
+@media(min-width: 720px){ .grid--3{ grid-template-columns: repeat(2, 1fr); } }
+@media(min-width: 1000px){ .grid--3{ grid-template-columns: repeat(3, 1fr); } }
+
+.card{
+  background: var(--cream);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  display:flex; flex-direction:column;
+  transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+}
+.card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-lift); border-color: transparent; }
+.card__media{ position:relative; overflow:hidden; aspect-ratio: 4/3; }
+.card__media.tall{ aspect-ratio: 4/3.4; }
+.card__media img{
+  width:100%; height:100%; object-fit:cover;
+  transition: transform 1.2s var(--ease);
+}
+.card:hover .card__media img{ transform: scale(1.06); }
+
+.card__badge{
+  position:absolute; top: 14px; left: 14px;
+  background: var(--navy-800); color: var(--cream);
+  padding: 6px 12px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+}
+.card__badge.gold{ background: var(--gold); color: var(--navy-900); }
+.card__pill{
+  position:absolute; bottom: 14px; left: 14px;
+  background: rgba(12,26,46,.85); color: var(--cream);
+  padding: 8px 14px; border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+  backdrop-filter: blur(6px);
+}
+
+.card__body{ padding: 24px; display:flex; flex-direction:column; gap: 12px; flex: 1; }
+.card__body h3{
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: -.005em;
+  margin: 0;
+  line-height: 1.2;
+  color: var(--navy-900);
+}
+.card__body p{ margin: 0; color: var(--ink-soft); font-size: 14px; }
+.card__body p.muted{
+  font-size: 11.5px; letter-spacing: .12em;
+  color: var(--gold-deep); text-transform: uppercase; font-weight: 600;
+}
+
+.card__foot{
+  margin-top: auto; padding-top: 14px;
+  display:flex; align-items:center; justify-content:space-between;
+  gap: 12px;
+  border-top: 1px solid var(--line);
+}
+.price{ display:flex; align-items:baseline; gap:6px; }
+.price span{ font-size: 11.5px; letter-spacing: .12em; text-transform:uppercase; color: var(--ink-soft); }
+.price strong{ font-family: var(--serif); font-size: 1.55rem; font-weight: 600; color: var(--navy-900); }
+
+.btn-out{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding: 10px 20px;
+  border: 1.5px solid var(--navy-900);
+  color: var(--navy-900);
+  border-radius: 999px;
+  font-size: 12.5px; font-weight: 600; letter-spacing: .08em;
+  transition: background .3s var(--ease), color .3s var(--ease), transform .3s var(--ease);
+}
+.btn-out:hover{ background: var(--navy-900); color: var(--cream); transform: translateY(-2px); }
+
+
+/* ---------- Filters ---------- */
+.filters{ display:flex; flex-wrap:wrap; gap: 8px; }
+.chip{
+  padding: 9px 18px;
+  border-radius: 999px;
+  border: 1.5px solid var(--line-strong);
+  font-size: 12.5px; font-weight: 600; letter-spacing: .04em;
+  background: transparent;
+  color: var(--navy-900);
+  transition: all .3s var(--ease);
+}
+.chip:hover{ border-color: var(--navy-900); }
+.chip.is-active{ background: var(--navy-900); color: var(--cream); border-color: var(--navy-900); }
+
+.filter-empty{
+  text-align:center; padding: 50px 0;
+  color: var(--ink-soft); font-style:italic;
+}
+.card[hidden]{ display:none !important; }
+
+
+/* ============================================================================
+   ROGUE GALLERY — masonry-ish bento grid
+   ============================================================================ */
+.gallery{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 200px 200px 200px;
+  gap: 14px;
+}
+.gallery__item{
+  position: relative;
+  background-size: cover; background-position: center;
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: transform .5s var(--ease);
+}
+.gallery__item::before{
+  content:""; position:absolute; inset:0;
+  background: linear-gradient(180deg, transparent 60%, rgba(12,26,46,.8));
+  transition: opacity .3s var(--ease);
+}
+.gallery__item:hover{ transform: scale(1.02); }
+.gallery__item span{
+  position:absolute; left: 18px; bottom: 14px;
+  color: var(--cream);
+  font-family: var(--serif); font-size: 1.05rem; font-style: italic;
+  z-index: 2;
+}
+
+@media(min-width: 800px){
+  .gallery{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 240px 240px;
+    gap: 16px;
+  }
+  .gallery__item--tall{ grid-row: span 2; }
+  .gallery__item--wide{ grid-column: span 2; }
+}
+
+
+/* ============================================================================
+   ABOUT
+   ============================================================================ */
+.about{
+  display:grid; grid-template-columns: 1fr; gap: 50px;
+  align-items: center;
+}
+.about__media{ position: relative; }
+.about__media img{
+  border-radius: var(--radius-l);
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  width:100%;
+}
+.about__badge{
+  position:absolute; bottom: -28px; right: -10px;
+  background: var(--gold);
+  color: var(--navy-900);
+  padding: 22px 26px;
+  border-radius: var(--radius);
+  display:flex; flex-direction:column;
+  box-shadow: var(--shadow-lift);
+  max-width: 200px;
+}
+.about__badge strong{
+  font-family: var(--serif); font-size: 1.6rem; font-weight: 600; line-height:1;
+}
+.about__badge span{ font-size: 12px; letter-spacing: .08em; margin-top:4px; opacity:.9; }
+
+.about__text p{
+  margin: 18px 0 0;
+  color: var(--ink-soft);
+  font-size: 1rem;
+}
+.trust-grid{
+  margin-top: 36px;
+  display:grid; grid-template-columns: repeat(2,1fr); gap: 22px;
+}
+.trust-grid__item h4{
+  font-family: var(--serif); font-weight: 600; font-size: 1.1rem;
+  margin: 8px 0 4px; color: var(--navy-900);
+}
+.trust-grid__item p{ font-size: 13.5px; color: var(--ink-soft); margin:0; }
+.trust-grid__icon{
+  font-size: 1.5rem;
+  display:inline-flex; align-items:center; justify-content:center;
+  width: 44px; height: 44px;
+  background: var(--sand-100);
+  border-radius: 12px;
+}
+
+@media(min-width: 900px){
+  .about{ grid-template-columns: 0.9fr 1.1fr; gap: 80px; }
+}
+
+
+/* ============================================================================
+   BOOKING
+   ============================================================================ */
+.booking{
+  display:grid; grid-template-columns: 1fr; gap: 50px;
+  align-items: start;
+}
+.booking__perks{ margin-top: 28px; display:flex; flex-direction:column; gap: 8px; }
+.booking__perks li{ font-size: 14px; color: var(--ink-soft); }
+
+.booking__form{
+  background: var(--cream);
+  padding: 32px;
+  border-radius: var(--radius-l);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-soft);
+  display:flex; flex-direction:column; gap: 16px;
+}
+.booking__form .row{ display:grid; grid-template-columns: 1fr; gap: 16px; }
+@media(min-width: 600px){ .booking__form .row{ grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); } }
+
+.field{ display:flex; flex-direction:column; gap: 6px; }
+.field label{
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase;
+  font-weight: 600; color: var(--ink-soft);
+}
+.field input,
+.field select,
+.field textarea{
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius-s);
+  padding: 13px 14px;
+  background: var(--cream);
+  font: 500 15px var(--sans);
+  color: var(--ink);
+  transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+}
+.field input:focus,
+.field select:focus,
+.field textarea:focus{
+  outline:0;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(216,178,96,.2);
+}
+.field textarea{ resize: vertical; }
+
+.form-success{
+  background: rgba(40,140,80,.1);
+  border: 1px solid rgba(40,140,80,.3);
+  color: #1f6b40;
+  padding: 14px 18px;
+  border-radius: var(--radius-s);
+  font-size: 14px;
+  display:flex; flex-direction:column; gap:4px;
+}
+
+@media(min-width: 980px){
+  .booking{ grid-template-columns: 1fr 1.1fr; gap: 80px; }
+}
+
+
+/* ============================================================================
+   CONTACT
+   ============================================================================ */
+.contact{ display:grid; grid-template-columns: 1fr; gap: 32px; }
+.contact__info{ display:flex; flex-direction:column; gap: 14px; }
+.contact__row{
+  display:flex; align-items:center; gap: 18px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--cream);
+  transition: border-color .3s var(--ease), transform .3s var(--ease);
+}
+.contact__row:hover{ border-color: var(--gold); transform: translateX(4px); }
+.contact__row--static{ pointer-events: none; }
+.contact__icon{
+  width: 48px; height: 48px;
+  background: var(--sand-100);
+  color: var(--gold-deep);
+  border-radius: 50%;
+  display:inline-flex; align-items:center; justify-content:center;
+  flex-shrink: 0;
+}
+.contact__icon--wa{ background: #25D366; color: white; }
+.contact__row span:not(.contact__icon){ display:flex; flex-direction:column; }
+.contact__row small{
+  font-size: 11px; letter-spacing: .14em; text-transform:uppercase;
+  color: var(--ink-soft);
+}
+.contact__row strong{ font-family: var(--serif); font-size: 1.15rem; font-weight: 500; margin-top: 2px; color: var(--navy-900); }
+
+.contact__map{
+  border-radius: var(--radius-l);
+  overflow: hidden;
+  min-height: 360px;
+  border: 1px solid var(--line);
+}
+.contact__map iframe{ width:100%; height:100%; min-height: 360px; border:0; filter: saturate(.9) contrast(.95); }
+
+@media(min-width: 900px){
+  .contact{ grid-template-columns: 1fr 1.2fr; gap: 40px; }
+}
+
+
+/* ============================================================================
+   BOTTOM FOOTER
+   ============================================================================ */
+.footer{
+  background: var(--navy-900);
+  color: rgba(251,246,238,.78);
+  padding: 80px 0 24px;
+}
+.footer__inner{
+  display:grid; grid-template-columns: 1fr; gap: 40px;
+  padding-bottom: 50px; border-bottom: 1px solid rgba(216,178,96,.15);
+}
+.footer__col h5{
+  font-family: var(--serif); font-weight: 500;
+  font-size: 1.1rem; color: var(--cream);
+  margin: 0 0 16px;
+}
+.footer__col p{ font-size: 14px; color: rgba(251,246,238,.55); margin: 12px 0 0; }
+.footer__col ul{ display:flex; flex-direction:column; gap: 10px; }
+.footer__col a{
+  font-size: 13.5px; color: rgba(251,246,238,.7);
+  letter-spacing: .03em;
+  transition: color .25s var(--ease);
+}
+.footer__col a:hover{ color: var(--gold); }
+.footer__col--brand{ max-width: 320px; }
+.brand--light .brand__name,
+.brand--light .brand__sub{ color: var(--cream); }
+.brand--light .brand__sub{ color: var(--gold-soft); }
+
+.newsletter{ margin-top: 14px; display:flex; gap: 8px; }
+.newsletter input{
+  flex:1;
+  padding: 12px 14px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(216,178,96,.2);
+  border-radius: var(--radius-s);
+  color: var(--cream);
+  font: 500 14px var(--sans);
+}
+.newsletter input::placeholder{ color: rgba(251,246,238,.4); }
+.newsletter input:focus{ outline:0; border-color: var(--gold); }
+.newsletter button{
+  padding: 12px 20px;
+  background: var(--gold);
+  color: var(--navy-900);
+  border-radius: var(--radius-s);
+  font-weight: 700; font-size: 13px; letter-spacing: .08em;
+  transition: background .25s var(--ease);
+}
+.newsletter button:hover{ background: var(--gold-soft); }
+
+.footer__base{
+  padding-top: 24px;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  font-size: 12px; color: rgba(251,246,238,.5); letter-spacing: .04em;
+}
+
+@media(min-width: 720px){
+  .footer__inner{ grid-template-columns: 2fr 1fr 1fr 1.4fr; gap: 50px; }
+}
+
+
+/* ============================================================================
+   FLOATING WHATSAPP
+   ============================================================================ */
+.wa-float{
+  position: fixed;
+  right: 22px; bottom: 22px;
+  width: 58px; height: 58px;
+  background: #25D366; color: white;
+  border-radius: 50%;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow: 0 14px 40px -8px rgba(37,211,102,.55);
+  z-index: 60;
+  transition: transform .3s var(--ease);
+}
+.wa-float:hover{ transform: scale(1.08); }
+.wa-float__pulse{
+  position:absolute; inset:0;
+  border-radius:50%;
+  background: #25D366;
+  opacity:.45;
+  z-index:-1;
+  animation: waPulse 2s ease-out infinite;
+}
+@keyframes waPulse{
+  0%   { transform: scale(1); opacity:.5; }
+  100% { transform: scale(1.7); opacity:0; }
+}
+
+
+/* ============================================================================
+   REVEAL ANIMATIONS
+   ============================================================================ */
+.reveal{ opacity: 0; transform: translateY(28px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+.reveal.is-in{ opacity: 1; transform: translateY(0); }
+
+.grid.reveal > *,
+.gallery.reveal > *{ opacity:0; transform: translateY(28px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+.grid.reveal.is-in > *,
+.gallery.reveal.is-in > *{ opacity:1; transform: translateY(0); }
+.grid.reveal.is-in > *:nth-child(1){ transition-delay: 0s; }
+.grid.reveal.is-in > *:nth-child(2){ transition-delay: .08s; }
+.grid.reveal.is-in > *:nth-child(3){ transition-delay: .16s; }
+.grid.reveal.is-in > *:nth-child(4){ transition-delay: .24s; }
+.grid.reveal.is-in > *:nth-child(5){ transition-delay: .32s; }
+.grid.reveal.is-in > *:nth-child(6){ transition-delay: .40s; }
+
+@keyframes fadeUp{
+  from{ opacity:0; transform: translateY(30px); }
+  to  { opacity:1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+  html{ scroll-behavior: auto; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ====================================================================
+       HERO + NAV (single dark cinematic block as in the reference)
+       ==================================================================== -->
+  <section class="hero" id="home">
+
+    <!-- Background slideshow: balloon over the Atlas / kasbah -->
+    <div class="hero__bg" aria-hidden="true">
+      <div class="hero__slide is-active" style="background-image:url('https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1597212618440-806262de4f6b?w=2000&q=80')"></div>
+      <div class="hero__slide" style="background-image:url('https://images.unsplash.com/photo-1548013146-72479768bada?w=2000&q=80')"></div>
+      <div class="hero__overlay"></div>
+    </div>
+
+    <!-- Nav, sitting on top of hero -->
+    <header class="nav" id="nav">
+      <div class="nav__inner">
+
+        <!-- LOGO: balloon inside a horseshoe (Moorish) arch + brand text -->
+        <a href="#home" class="brand" aria-label="Morocco Skies and Secrets — home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 70 70" width="56" height="56" xmlns="http://www.w3.org/2000/svg">
+              <!-- Moorish horseshoe arch outline -->
+              <path d="M10 64 V32 a25 28 0 0 1 50 0 V64"
+                    fill="none" stroke="#d8b260" stroke-width="2.4" stroke-linecap="round"/>
+              <!-- Inner arch line for depth -->
+              <path d="M14 64 V33 a21 24 0 0 1 42 0 V64"
+                    fill="none" stroke="#d8b260" stroke-width="1" opacity=".55"/>
+              <!-- Hot air balloon envelope -->
+              <ellipse cx="29" cy="28" rx="11" ry="13" fill="#d8b260"/>
+              <!-- Balloon stripes -->
+              <path d="M29 15 V41 M22 17 Q29 28 22 39 M36 17 Q29 28 36 39"
+                    stroke="#0f1d33" stroke-width="1.1" fill="none" opacity=".55"/>
+              <!-- Balloon basket -->
+              <rect x="26" y="42" width="6" height="3.4" rx=".6" fill="#d8b260"/>
+              <!-- Basket lines -->
+              <line x1="24.5" y1="40" x2="26" y2="42" stroke="#d8b260" stroke-width=".8"/>
+              <line x1="33.5" y1="40" x2="32" y2="42" stroke="#d8b260" stroke-width=".8"/>
+            </svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">MOROCCO</span>
+            <span class="brand__sub">SKIES &amp; SECRETS</span>
+          </span>
+        </a>
+
+        <!-- Primary nav -->
+        <nav class="nav__links" id="navLinks" aria-label="Primary">
+          <a href="#home"            class="is-active" data-i18n="nav.home">HOME</a>
+          <a href="#balloon-flights" data-i18n="nav.balloon">BALLOON FLIGHTS</a>
+          <a href="#city-circuits"   data-i18n="nav.circuits">CITY CIRCUITS</a>
+          <a href="#rogue-gallery"   data-i18n="nav.gallery">ROGUE GALLERY</a>
+          <a href="#about"           data-i18n="nav.about">ABOUT US</a>
+          <a href="#contact"         data-i18n="nav.contact">CONTACT</a>
+        </nav>
+
+        <!-- Right-side actions -->
+        <div class="nav__actions">
+          <a href="#booking" class="btn-book" data-i18n="nav.book">BOOK NOW</a>
+          <div class="lang-switch" role="group" aria-label="Language">
+            <span class="lang-globe" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/>
+              </svg>
+            </span>
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <span class="lang-sep">/</span>
+            <button class="lang-btn" data-lang="fr">FR</button>
+          </div>
+        </div>
+
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Centered Book Your Flight CTA -->
+    <div class="hero__center">
+      <a href="#booking" class="btn-cta" data-i18n="hero.book">Book Your Flight</a>
+    </div>
+
+    <!-- ====================================================================
+         FEATURE CARDS — overlapping the hero/footer junction
+         ==================================================================== -->
+    <div class="features">
+      <div class="features__inner">
+
+        <article class="feature">
+          <div class="feature__media">
+            <img src="https://images.unsplash.com/photo-1597211684565-dca64d72bdfe?w=900&q=80"
+                 alt="Hot air balloon over Marrakech medina at sunrise" loading="lazy"/>
+          </div>
+          <a href="#balloon-flights" class="feature__caption">
+            <h3 data-i18n="feat.balloon.t">HOT AIR BALLOONING</h3>
+            <p data-i18n="feat.balloon.d">Rise above the Atlas: unforgettable sunrise flights.</p>
+          </a>
+        </article>
+
+        <article class="feature">
+          <div class="feature__media">
+            <img src="https://images.unsplash.com/photo-1577147443647-81856d5151af?w=900&q=80"
+                 alt="Koutoubia mosque and Marrakech medina" loading="lazy"/>
+          </div>
+          <a href="#city-circuits" class="feature__caption">
+            <h3 data-i18n="feat.circuit.t">CITY CIRCUIT TOURS</h3>
+            <p data-i18n="feat.circuit.d">Discover ancient monuments, medinas, and historic sites.</p>
+          </a>
+        </article>
+
+        <article class="feature">
+          <div class="feature__media">
+            <img src="https://images.unsplash.com/photo-1548019979-fe1c5b15b04b?w=900&q=80"
+                 alt="Moroccan zellige mosaic art and craftsmanship" loading="lazy"/>
+          </div>
+          <a href="#rogue-gallery" class="feature__caption">
+            <h3 data-i18n="feat.gallery.t">THE ROGUE GALLERY</h3>
+            <p data-i18n="feat.gallery.d">Explore our curated collection of art, history, and photography.</p>
+          </a>
+        </article>
+
+      </div>
+    </div>
+
+    <!-- ====================================================================
+         TERRACOTTA FOOTER STRIP (matches the reference exactly)
+         ==================================================================== -->
+    <div class="hero-foot">
+      <div class="hero-foot__inner">
+        <span class="hero-foot__copy">© 2026 Morocco Skies &amp; Secrets. All rights reserved.</span>
+
+        <a href="#testimonials" class="hero-foot__link" data-i18n="foot.testimonials">TESTIMONIALS</a>
+
+        <a href="#quick-links" class="hero-foot__link" data-i18n="foot.quick">QUICK LINKS</a>
+
+        <div class="socials" aria-label="Social media">
+          <a href="#" aria-label="Instagram">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="Facebook">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.5 2.9h-2.4v7A10 10 0 0 0 22 12z"/>
+            </svg>
+          </a>
+          <a href="#" aria-label="TripAdvisor">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <ellipse cx="12" cy="14" rx="11" ry="6"/>
+              <circle cx="7" cy="14" r="2.4"/>
+              <circle cx="17" cy="14" r="2.4"/>
+              <circle cx="7" cy="14" r=".7" fill="currentColor"/>
+              <circle cx="17" cy="14" r=".7" fill="currentColor"/>
+              <path d="M12 8c-2-1-4-1-5-1M12 8c2-1 4-1 5-1"/>
+            </svg>
+          </a>
+        </div>
+
+        <span class="hero-foot__contact">
+          <span data-i18n="foot.contact">CONTACT US:</span>
+          <strong>+212 6 12 34 56 78</strong>
+        </span>
+      </div>
+
+      <!-- Decorative star ornament, bottom-right of the band -->
+      <span class="hero-foot__star" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="#f1d8b8">
+          <path d="M12 1.5 L13.6 9.2 L21.5 11 L13.6 12.8 L12 22.5 L10.4 12.8 L2.5 11 L10.4 9.2 Z"/>
+        </svg>
+      </span>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       BALLOON FLIGHTS
+       ==================================================================== -->
+  <section class="section" id="balloon-flights">
+    <div class="container">
+      <header class="section__head">
+        <span class="section__kicker" data-i18n="balloon.kicker">— Signature Experience</span>
+        <h2 class="section__title" data-i18n="balloon.title">Sunrise <em>balloon flights.</em></h2>
+        <p class="section__lead" data-i18n="balloon.lead">
+          Lift off from the plains of Marrakech just before dawn and watch the High Atlas
+          turn from indigo to gold. Champagne and traditional Berber breakfast on landing.
+        </p>
+      </header>
+
+      <div class="grid grid--3">
+
+        <article class="card">
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1507608616759-54f48f0af0ee?w=900&q=80" alt="Classic balloon flight" loading="lazy"/>
+            <span class="card__badge">Most popular</span>
+          </div>
+          <div class="card__body">
+            <h3>Classic Sunrise Flight</h3>
+            <p>1-hour flight, hotel pick-up, traditional breakfast in a Berber tent and a flight certificate.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€189</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1502786129293-79981df4e689?w=900&q=80" alt="Private balloon experience" loading="lazy"/>
+            <span class="card__badge gold">Private</span>
+          </div>
+          <div class="card__body">
+            <h3>Private Balloon</h3>
+            <p>Reserve the entire basket for your group — perfect for proposals, anniversaries and families.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€1,290</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1517821362941-f7f753bb8e8d?w=900&q=80" alt="Balloon and 4x4 desert combo" loading="lazy"/>
+          </div>
+          <div class="card__body">
+            <h3>Balloon + Agafay Desert</h3>
+            <p>Sunrise flight followed by a 4×4 expedition into the stone desert and a sunset camp dinner.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€259</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       CITY CIRCUITS — with filters
+       ==================================================================== -->
+  <section class="section section--alt" id="city-circuits">
+    <div class="container">
+      <header class="section__head section__head--row">
+        <div>
+          <span class="section__kicker" data-i18n="circuits.kicker">— Multi-day journeys</span>
+          <h2 class="section__title" data-i18n="circuits.title">City <em>circuits.</em></h2>
+        </div>
+        <div class="filters" role="group" aria-label="Filter circuits">
+          <button class="chip is-active" data-filter="all">All</button>
+          <button class="chip" data-filter="marrakech">Marrakech</button>
+          <button class="chip" data-filter="fes">Fes</button>
+          <button class="chip" data-filter="casablanca">Casablanca</button>
+          <button class="chip" data-filter="short">≤ 3 days</button>
+          <button class="chip" data-filter="long">5+ days</button>
+        </div>
+      </header>
+
+      <div class="grid grid--3" id="circuitGrid">
+
+        <article class="card" data-city="marrakech" data-days="3">
+          <div class="card__media tall">
+            <img src="https://images.unsplash.com/photo-1489493887464-892be6d1daae?w=900&q=80" alt="Sahara dunes" loading="lazy"/>
+            <span class="card__pill">3 days · 2 nights</span>
+          </div>
+          <div class="card__body">
+            <h3>Marrakech → Merzouga</h3>
+            <p class="muted">Aït Ben Haddou · Dadès · Merzouga · Camel trek</p>
+            <p>Cross the High Atlas, sleep under the stars in a luxury desert camp.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€189</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-city="casablanca" data-days="2">
+          <div class="card__media tall">
+            <img src="https://images.unsplash.com/photo-1548019979-fe1c5b15b04b?w=900&q=80" alt="Chefchaouen blue streets" loading="lazy"/>
+            <span class="card__pill">2 days · 1 night</span>
+          </div>
+          <div class="card__body">
+            <h3>Casablanca → Chefchaouen</h3>
+            <p class="muted">Casablanca · Rabat · Chefchaouen · Akchour falls</p>
+            <p>Wander the indigo lanes of the Blue Pearl and hike to turquoise pools.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€129</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-city="fes" data-days="4">
+          <div class="card__media tall">
+            <img src="https://images.unsplash.com/photo-1528127269322-539801943592?w=900&q=80" alt="Atlas mountains" loading="lazy"/>
+            <span class="card__pill">4 days · 3 nights</span>
+          </div>
+          <div class="card__body">
+            <h3>Fes → Atlas Mountains</h3>
+            <p class="muted">Fes medina · Ifrane · Middle Atlas · Cedar forest</p>
+            <p>Imperial Fes, then cedar forests and Berber villages of the Middle Atlas.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€219</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-city="marrakech" data-days="7">
+          <div class="card__media tall">
+            <img src="https://images.unsplash.com/photo-1517821362941-f7f753bb8e8d?w=900&q=80" alt="Grand Morocco loop" loading="lazy"/>
+            <span class="card__pill">7 days · 6 nights</span>
+          </div>
+          <div class="card__body">
+            <h3>Grand Morocco Loop</h3>
+            <p class="muted">Marrakech · Sahara · Fes · Chefchaouen · Casablanca</p>
+            <p>The full experience: imperial cities, dunes and mountains in one journey.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€649</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-city="marrakech" data-days="2">
+          <div class="card__media tall">
+            <img src="https://images.unsplash.com/photo-1518730518541-d0843268c287?w=900&q=80" alt="Essaouira coast" loading="lazy"/>
+            <span class="card__pill">2 days · 1 night</span>
+          </div>
+          <div class="card__body">
+            <h3>Marrakech → Essaouira</h3>
+            <p class="muted">Argan groves · Essaouira medina · Atlantic coast</p>
+            <p>Trade the red city for windswept ramparts and Atlantic beaches.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€99</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-city="fes" data-days="5">
+          <div class="card__media tall">
+            <img src="https://images.unsplash.com/photo-1509023464722-18d996393ca8?w=900&q=80" alt="Fes to Sahara loop" loading="lazy"/>
+            <span class="card__pill">5 days · 4 nights</span>
+          </div>
+          <div class="card__body">
+            <h3>Fes → Sahara Loop</h3>
+            <p class="muted">Fes · Ifrane · Erfoud · Merzouga · Marrakech</p>
+            <p>From imperial Fes across the Atlas to the golden dunes.</p>
+            <div class="card__foot">
+              <span class="price"><span>from</span> <strong>€359</strong></span>
+              <a href="#booking" class="btn-out">Book</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="filter-empty" id="filterEmpty" hidden>No circuits match those filters yet — try another combination.</p>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       ROGUE GALLERY — art / history / photography
+       ==================================================================== -->
+  <section class="section section--dark" id="rogue-gallery">
+    <div class="section__bg" aria-hidden="true"></div>
+    <div class="container">
+      <header class="section__head section__head--center">
+        <span class="section__kicker light" data-i18n="gallery.kicker">— The Rogue Gallery</span>
+        <h2 class="section__title light" data-i18n="gallery.title">Art, history &amp; <em>photography.</em></h2>
+        <p class="section__lead light" data-i18n="gallery.lead">
+          A curated collection celebrating Moroccan craft — zellige, leather, calligraphy and the
+          black-and-white desert photography of our founder.
+        </p>
+      </header>
+
+      <div class="gallery">
+        <a href="#" class="gallery__item gallery__item--tall" style="background-image:url('https://images.unsplash.com/photo-1548013146-72479768bada?w=900&q=80')">
+          <span>Sahara, 2023</span>
+        </a>
+        <a href="#" class="gallery__item" style="background-image:url('https://images.unsplash.com/photo-1539650116574-75c0c6d73d0e?w=900&q=80')">
+          <span>Fes Tannery</span>
+        </a>
+        <a href="#" class="gallery__item" style="background-image:url('https://images.unsplash.com/photo-1565689876697-e467b6c54da2?w=900&q=80')">
+          <span>Rabat Kasbah</span>
+        </a>
+        <a href="#" class="gallery__item gallery__item--wide" style="background-image:url('https://images.unsplash.com/photo-1553244453-1d29f2bb19a3?w=1400&q=80')">
+          <span>Atlas at dawn</span>
+        </a>
+        <a href="#" class="gallery__item" style="background-image:url('https://images.unsplash.com/photo-1551893134-89717ad60295?w=900&q=80')">
+          <span>Essaouira port</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       ABOUT US
+       ==================================================================== -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="about__media">
+        <img src="https://images.unsplash.com/photo-1539020140153-e479b8c22e70?w=1100&q=80" alt="Marrakech rooftop view" loading="lazy"/>
+        <div class="about__badge">
+          <strong>Since 2014</strong>
+          <span>flying above Marrakech</span>
+        </div>
+      </div>
+      <div class="about__text">
+        <span class="section__kicker" data-i18n="about.kicker">— About us</span>
+        <h2 class="section__title" data-i18n="about.title">A Marrakech-born <em>family agency.</em></h2>
+        <p data-i18n="about.p1">
+          Morocco Skies &amp; Secrets is a Marrakech-based travel and ballooning company.
+          We started with a single balloon over the palmeraie and grew into a full agency
+          curating flights, city circuits and cultural experiences across the Kingdom.
+        </p>
+        <p data-i18n="about.p2">
+          All our pilots are licensed by the Moroccan Civil Aviation Authority, our
+          vehicles are regularly serviced, and every itinerary is designed by people
+          who actually live here.
+        </p>
+
+        <div class="trust-grid">
+          <div class="trust-grid__item">
+            <span class="trust-grid__icon">🎈</span>
+            <h4>Licensed pilots</h4>
+            <p>All flights operated by certified, English-speaking pilots.</p>
+          </div>
+          <div class="trust-grid__item">
+            <span class="trust-grid__icon">🛡️</span>
+            <h4>Safe &amp; insured</h4>
+            <p>Comprehensive insurance and modern, regularly inspected equipment.</p>
+          </div>
+          <div class="trust-grid__item">
+            <span class="trust-grid__icon">⏱️</span>
+            <h4>Punctuality</h4>
+            <p>Hotel pick-ups, flight tracking, 24/7 multilingual support.</p>
+          </div>
+          <div class="trust-grid__item">
+            <span class="trust-grid__icon">🌿</span>
+            <h4>Local &amp; ethical</h4>
+            <p>Local guides, family-run riads, fair pay across the chain.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       BOOKING
+       ==================================================================== -->
+  <section class="section section--alt" id="booking">
+    <div class="container booking">
+      <div class="booking__intro">
+        <span class="section__kicker" data-i18n="booking.kicker">— Booking</span>
+        <h2 class="section__title" data-i18n="booking.title">Plan your <em>flight or trip.</em></h2>
+        <p data-i18n="booking.lead">
+          Tell us what you'd like to do and we'll come back within a few hours with a
+          tailored quote. No deposit required to receive your itinerary.
+        </p>
+        <ul class="booking__perks">
+          <li>✦ Free cancellation up to 48h before</li>
+          <li>✦ Pay in EUR, USD or MAD</li>
+          <li>✦ Reply within 4 hours</li>
+        </ul>
+      </div>
+
+      <form class="booking__form" id="bookingForm" novalidate>
+        <div class="row">
+          <div class="field">
+            <label>Full name *</label>
+            <input type="text" name="name" required placeholder="Your name" />
+          </div>
+          <div class="field">
+            <label>WhatsApp / Phone *</label>
+            <input type="tel" name="phone" required placeholder="+212 ..." />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Email *</label>
+          <input type="email" name="email" required placeholder="you@email.com" />
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label>Service *</label>
+            <select name="service" required>
+              <option value="">Select a service</option>
+              <option>Hot air balloon flight</option>
+              <option>Private balloon</option>
+              <option>City circuit</option>
+              <option>City tour</option>
+              <option>Airport transfer</option>
+              <option>Custom request</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Date *</label>
+            <input type="date" name="date" required />
+          </div>
+          <div class="field">
+            <label>People *</label>
+            <input type="number" name="people" min="1" max="60" value="2" required />
+          </div>
+        </div>
+
+        <div class="field">
+          <label>Message</label>
+          <textarea name="message" rows="4" placeholder="Tell us about your dream trip..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-cta btn-cta--block">
+          Send Request
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+
+        <div class="form-success" id="formSuccess" hidden>
+          <strong>✓ Thank you!</strong>
+          <span>Your request has been received. We'll get back to you within 4 hours.</span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       CONTACT
+       ==================================================================== -->
+  <section class="section" id="contact">
+    <div class="container">
+      <header class="section__head section__head--center">
+        <span class="section__kicker" data-i18n="contact.kicker">— Contact</span>
+        <h2 class="section__title" data-i18n="contact.title">Get in <em>touch.</em></h2>
+      </header>
+
+      <div class="contact">
+        <div class="contact__info">
+          <a href="tel:+212612345678" class="contact__row">
+            <span class="contact__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </span>
+            <span><small>Call us</small><strong>+212 6 12 34 56 78</strong></span>
+          </a>
+
+          <a href="mailto:contact@moroccoskies.com" class="contact__row">
+            <span class="contact__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </span>
+            <span><small>Email us</small><strong>contact@moroccoskies.com</strong></span>
+          </a>
+
+          <a href="https://wa.me/212612345678" target="_blank" rel="noopener" class="contact__row">
+            <span class="contact__icon contact__icon--wa">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+            </span>
+            <span><small>WhatsApp</small><strong>Chat with us instantly</strong></span>
+          </a>
+
+          <div class="contact__row contact__row--static">
+            <span class="contact__icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </span>
+            <span><small>Office</small><strong>Avenue Mohammed V, Marrakech 40000</strong></span>
+          </div>
+        </div>
+
+        <div class="contact__map">
+          <iframe
+            title="Our location in Marrakech"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d54311.51487437773!2d-8.044137!3d31.6294723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xdafee8d96179e51%3A0x5950b6534f87adb8!2sMarrakech!5e0!3m2!1sen!2sma!4v1700000000000"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ====================================================================
+       BOTTOM FOOTER
+       ==================================================================== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col footer__col--brand">
+        <a href="#home" class="brand brand--light">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 70 70" width="48" height="48">
+              <path d="M10 64 V32 a25 28 0 0 1 50 0 V64" fill="none" stroke="#d8b260" stroke-width="2.4" stroke-linecap="round"/>
+              <ellipse cx="29" cy="28" rx="11" ry="13" fill="#d8b260"/>
+              <path d="M29 15 V41 M22 17 Q29 28 22 39 M36 17 Q29 28 36 39" stroke="#0f1d33" stroke-width="1" fill="none" opacity=".55"/>
+              <rect x="26" y="42" width="6" height="3.4" rx=".6" fill="#d8b260"/>
+            </svg>
+          </span>
+          <span class="brand__text">
+            <span class="brand__name">MOROCCO</span>
+            <span class="brand__sub">SKIES &amp; SECRETS</span>
+          </span>
+        </a>
+        <p>Sunrise balloon flights, city circuits and cultural tours from Marrakech.</p>
+      </div>
+
+      <div class="footer__col">
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#balloon-flights">Balloon Flights</a></li>
+          <li><a href="#city-circuits">City Circuits</a></li>
+          <li><a href="#rogue-gallery">Rogue Gallery</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Company</h5>
+        <ul>
+          <li><a href="#booking">Book a flight</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Privacy policy</a></li>
+          <li><a href="#">Terms</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h5>Stay in touch</h5>
+        <p>Get seasonal offers and travel tips, no spam.</p>
+        <form class="newsletter" onsubmit="event.preventDefault(); this.querySelector('button').textContent='✓ Subscribed';">
+          <input type="email" placeholder="Your email" required />
+          <button type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="footer__base container">
+      <span>© 2026 Morocco Skies &amp; Secrets. All rights reserved.</span>
+      <span>Made with ✦ in Marrakech</span>
+    </div>
+  </footer>
+
+
+  <!-- ====================================================================
+       FLOATING WHATSAPP
+       ==================================================================== -->
+  <a href="https://wa.me/212612345678" target="_blank" rel="noopener" class="wa-float" aria-label="Chat on WhatsApp">
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.05 21.785h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"/></svg>
+    <span class="wa-float__pulse"></span>
+  </a>
+
+  <script>
+/* ============================================================================
+   MOROCCO SKIES & SECRETS — script.js
+   Vanilla JS, no dependencies.
+   Handles: mobile menu, hero slideshow, scroll reveals, circuit filtering,
+            booking form, EN/FR language toggle.
+   ============================================================================ */
+
+(function () {
+  'use strict';
+
+  /* -----------------------------------------------------------------
+     1. MOBILE MENU TOGGLE
+     ----------------------------------------------------------------- */
+  const navToggle = document.getElementById('navToggle');
+  const navLinks  = document.getElementById('navLinks');
+
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+      const open = navLinks.classList.toggle('is-open');
+      navToggle.classList.toggle('is-open', open);
+      navToggle.setAttribute('aria-expanded', open);
+      document.body.style.overflow = open ? 'hidden' : '';
+    });
+
+    // Close menu on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        navLinks.classList.remove('is-open');
+        navToggle.classList.remove('is-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* -----------------------------------------------------------------
+     2. ACTIVE NAV LINK based on scroll position
+     ----------------------------------------------------------------- */
+  const sections = document.querySelectorAll('section[id]');
+  const navAnchors = document.querySelectorAll('#navLinks a');
+
+  const setActiveLink = () => {
+    const scrollPos = window.scrollY + 120;
+    let currentId = 'home';
+    sections.forEach(sec => {
+      if (sec.offsetTop <= scrollPos) currentId = sec.id;
+    });
+    navAnchors.forEach(a => {
+      a.classList.toggle('is-active', a.getAttribute('href') === '#' + currentId);
+    });
+  };
+  window.addEventListener('scroll', setActiveLink, { passive: true });
+  setActiveLink();
+
+  /* -----------------------------------------------------------------
+     3. HERO BACKGROUND SLIDESHOW
+     ----------------------------------------------------------------- */
+  const slides = document.querySelectorAll('.hero__slide');
+  if (slides.length > 1) {
+    let current = 0;
+    setInterval(() => {
+      slides[current].classList.remove('is-active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('is-active');
+    }, 6000);
+  }
+
+  /* -----------------------------------------------------------------
+     4. SCROLL REVEAL — IntersectionObserver
+     ----------------------------------------------------------------- */
+  const revealTargets = document.querySelectorAll(
+    '.section__head, .grid, .gallery, .about__media, .about__text, .booking__intro, .booking__form, .contact'
+  );
+  revealTargets.forEach(el => el.classList.add('reveal'));
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  revealTargets.forEach(el => io.observe(el));
+
+  /* -----------------------------------------------------------------
+     5. CIRCUIT FILTERING — by city or duration
+     ----------------------------------------------------------------- */
+  const chips    = document.querySelectorAll('.filters .chip');
+  const circuits = document.querySelectorAll('#circuitGrid .card');
+  const empty    = document.getElementById('filterEmpty');
+
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('is-active'));
+      chip.classList.add('is-active');
+
+      const filter = chip.dataset.filter;
+      let visibleCount = 0;
+
+      circuits.forEach(card => {
+        const city = card.dataset.city;
+        const days = parseInt(card.dataset.days, 10);
+        let show = false;
+
+        if (filter === 'all')                      show = true;
+        else if (filter === 'short' && days <= 3)  show = true;
+        else if (filter === 'long'  && days >= 5)  show = true;
+        else if (city === filter)                  show = true;
+
+        card.hidden = !show;
+        if (show) visibleCount++;
+      });
+
+      if (empty) empty.hidden = visibleCount > 0;
+    });
+  });
+
+  /* -----------------------------------------------------------------
+     6. BOOKING FORM — frontend confirmation
+     ----------------------------------------------------------------- */
+  const bookingForm = document.getElementById('bookingForm');
+  const successBox  = document.getElementById('formSuccess');
+
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!bookingForm.checkValidity()) { bookingForm.reportValidity(); return; }
+
+      const submitBtn = bookingForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.innerHTML;
+      submitBtn.innerHTML = 'Sending...';
+      submitBtn.disabled = true;
+
+      // Simulate sending (replace with real backend / EmailJS / Formspree etc.)
+      setTimeout(() => {
+        successBox.hidden = false;
+        successBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        bookingForm.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+        setTimeout(() => { successBox.hidden = true; }, 8000);
+      }, 800);
+    });
+  }
+
+  /* -----------------------------------------------------------------
+     7. LANGUAGE TOGGLE — EN / FR
+     ----------------------------------------------------------------- */
+  const translations = {
+    en: {
+      'meta.title': 'Morocco Skies & Secrets — Hot Air Balloon Flights, City Circuits & Tours',
+      'meta.description': 'Sunrise hot air balloon flights over the Atlas, curated city circuits and cultural tours from Marrakech.',
+      'nav.home': 'HOME',
+      'nav.balloon': 'BALLOON FLIGHTS',
+      'nav.circuits': 'CITY CIRCUITS',
+      'nav.gallery': 'ROGUE GALLERY',
+      'nav.about': 'ABOUT US',
+      'nav.contact': 'CONTACT',
+      'nav.book': 'BOOK NOW',
+      'hero.book': 'Book Your Flight',
+      'feat.balloon.t': 'HOT AIR BALLOONING',
+      'feat.balloon.d': 'Rise above the Atlas: unforgettable sunrise flights.',
+      'feat.circuit.t': 'CITY CIRCUIT TOURS',
+      'feat.circuit.d': 'Discover ancient monuments, medinas, and historic sites.',
+      'feat.gallery.t': 'THE ROGUE GALLERY',
+      'feat.gallery.d': 'Explore our curated collection of art, history, and photography.',
+      'foot.testimonials': 'TESTIMONIALS',
+      'foot.quick': 'QUICK LINKS',
+      'foot.contact': 'CONTACT US:',
+      'balloon.kicker': '— Signature Experience',
+      'balloon.title': 'Sunrise <em>balloon flights.</em>',
+      'balloon.lead': 'Lift off from the plains of Marrakech just before dawn and watch the High Atlas turn from indigo to gold. Champagne and traditional Berber breakfast on landing.',
+      'circuits.kicker': '— Multi-day journeys',
+      'circuits.title': 'City <em>circuits.</em>',
+      'gallery.kicker': '— The Rogue Gallery',
+      'gallery.title': 'Art, history & <em>photography.</em>',
+      'gallery.lead': 'A curated collection celebrating Moroccan craft — zellige, leather, calligraphy and the black-and-white desert photography of our founder.',
+      'about.kicker': '— About us',
+      'about.title': 'A Marrakech-born <em>family agency.</em>',
+      'about.p1': 'Morocco Skies & Secrets is a Marrakech-based travel and ballooning company. We started with a single balloon over the palmeraie and grew into a full agency curating flights, city circuits and cultural experiences across the Kingdom.',
+      'about.p2': 'All our pilots are licensed by the Moroccan Civil Aviation Authority, our vehicles are regularly serviced, and every itinerary is designed by people who actually live here.',
+      'booking.kicker': '— Booking',
+      'booking.title': 'Plan your <em>flight or trip.</em>',
+      'booking.lead': "Tell us what you'd like to do and we'll come back within a few hours with a tailored quote. No deposit required to receive your itinerary.",
+      'contact.kicker': '— Contact',
+      'contact.title': 'Get in <em>touch.</em>'
+    },
+    fr: {
+      'meta.title': 'Morocco Skies & Secrets — Vols en Montgolfière, Circuits et Excursions',
+      'meta.description': 'Vols en montgolfière au lever du soleil au-dessus de l\'Atlas, circuits citadins et excursions culturelles depuis Marrakech.',
+      'nav.home': 'ACCUEIL',
+      'nav.balloon': 'MONTGOLFIÈRES',
+      'nav.circuits': 'CIRCUITS',
+      'nav.gallery': 'GALERIE',
+      'nav.about': 'À PROPOS',
+      'nav.contact': 'CONTACT',
+      'nav.book': 'RÉSERVER',
+      'hero.book': 'Réservez Votre Vol',
+      'feat.balloon.t': 'VOL EN MONTGOLFIÈRE',
+      'feat.balloon.d': 'Survolez l\'Atlas : des vols inoubliables au lever du soleil.',
+      'feat.circuit.t': 'CIRCUITS DE VILLES',
+      'feat.circuit.d': 'Découvrez monuments anciens, médinas et sites historiques.',
+      'feat.gallery.t': 'LA GALERIE',
+      'feat.gallery.d': 'Explorez notre collection d\'art, d\'histoire et de photographie.',
+      'foot.testimonials': 'TÉMOIGNAGES',
+      'foot.quick': 'LIENS RAPIDES',
+      'foot.contact': 'CONTACTEZ-NOUS :',
+      'balloon.kicker': '— Expérience signature',
+      'balloon.title': 'Vols en montgolfière <em>au lever du soleil.</em>',
+      'balloon.lead': 'Décollez des plaines de Marrakech juste avant l\'aube et regardez le Haut Atlas passer de l\'indigo à l\'or. Champagne et petit-déjeuner berbère traditionnel à l\'atterrissage.',
+      'circuits.kicker': '— Voyages sur plusieurs jours',
+      'circuits.title': 'Circuits <em>de villes.</em>',
+      'gallery.kicker': '— La Galerie',
+      'gallery.title': 'Art, histoire et <em>photographie.</em>',
+      'gallery.lead': 'Une collection célébrant l\'artisanat marocain — zellige, cuir, calligraphie et la photographie noir et blanc du désert de notre fondateur.',
+      'about.kicker': '— À propos',
+      'about.title': 'Une agence familiale <em>née à Marrakech.</em>',
+      'about.p1': 'Morocco Skies & Secrets est une agence de voyage et de montgolfière basée à Marrakech. Nous avons commencé avec une seule montgolfière au-dessus de la palmeraie et sommes devenus une agence complète proposant vols, circuits citadins et expériences culturelles à travers le Royaume.',
+      'about.p2': 'Tous nos pilotes sont licenciés par l\'Autorité de l\'Aviation Civile Marocaine, nos véhicules sont régulièrement entretenus, et chaque itinéraire est conçu par des personnes qui vivent ici.',
+      'booking.kicker': '— Réservation',
+      'booking.title': 'Planifiez votre <em>vol ou voyage.</em>',
+      'booking.lead': 'Dites-nous ce que vous voulez faire et nous reviendrons en quelques heures avec un devis personnalisé. Aucun acompte requis.',
+      'contact.kicker': '— Contact',
+      'contact.title': 'Prenez <em>contact.</em>'
+    }
+  };
+
+  const langButtons = document.querySelectorAll('.lang-btn');
+  const html = document.documentElement;
+
+  function setLang(lang) {
+    const dict = translations[lang];
+    if (!dict) return;
+
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      const value = dict[key];
+      if (!value) return;
+
+      if (el.tagName === 'META')       el.setAttribute('content', value);
+      else if (el.tagName === 'TITLE') document.title = value;
+      // Allow lightweight HTML in titles (e.g. <em>...</em>)
+      else if (value.includes('<em>')) el.innerHTML = value;
+      else                              el.textContent = value;
+    });
+
+    html.setAttribute('lang', lang);
+    langButtons.forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+
+    try { localStorage.setItem('mss_lang', lang); } catch (e) { /* ignore */ }
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener('click', () => setLang(btn.dataset.lang));
+  });
+
+  try {
+    const saved = localStorage.getItem('mss_lang');
+    if (saved && translations[saved]) setLang(saved);
+  } catch (e) { /* ignore */ }
+
+  /* -----------------------------------------------------------------
+     8. SET DATE INPUTS' MIN to today
+     ----------------------------------------------------------------- */
+  const today = new Date().toISOString().split('T')[0];
+  document.querySelectorAll('input[type="date"]').forEach(input => {
+    input.setAttribute('min', today);
+  });
+
+})();
+
+</script>
+</body>
+</html>
